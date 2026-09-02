@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daksh Bhimani | Personal Portfolio</title>
+
+    <style>
+
+        /* =========================
+           BASIC CSS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: #1f2937;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 35px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background-color: #111827;
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile {
+            background-color: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #38bdf8;
+
+            margin-bottom: 15px;
+        }
+
+        .profile h2 {
+            color: #0284c7;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .profile p {
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        .section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            color: #0284c7;
+            margin-bottom: 20px;
+
+            border-bottom: 2px solid #38bdf8;
+
+            padding-bottom: 7px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-text {
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .education-box {
+            border-left: 5px solid #0284c7;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 5px;
+        }
+
+        .education-box h3 {
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .education-box p {
+            margin: 5px 0;
+        }
+
+        .year {
+            color: #0284c7;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background-color: #0284c7;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .skill:hover {
+            background-color: #0369a1;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            padding: 22px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            color: #0284c7;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #555;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .contact strong {
+            color: #0284c7;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        /* =========================
+           MEDIA QUERY - TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .education {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+        }
+
+
+        /* =========================
+           MEDIA QUERY - MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px 10px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+
+            /* Navigation */
+
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+
+
+            /* Container */
+
+            .container {
+                width: 95%;
+                margin: 20px auto;
+            }
+
+
+            /* Profile */
+
+            .profile {
+                padding: 25px 15px;
+            }
+
+            .profile img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .profile h2 {
+                font-size: 24px;
+            }
+
+
+            /* Sections */
+
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 23px;
+            }
+
+
+            /* Skills */
+
+            .skills {
+                flex-direction: column;
+            }
+
+            .skill {
+                text-align: center;
+            }
+
+
+            /* Projects */
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* Education */
+
+            .education {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <h1>Daksh Bhimani</h1>
+
+        <p>Computer Engineering Student</p>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <div class="container">
+
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+        <div class="profile">
+
+            <!-- D PROFILE IMAGE -->
+
+            <img src="daksh.png" alt="Daksh Bhimani">
+
+            <h2>Daksh Bhimani</h2>
+
+            <p>
+                Web Developer | Computer Engineering Student
+            </p>
+
+            <p>
+                I am interested in web development, programming
+                and software development.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <div class="section" id="about">
+
+            <h2>About Me</h2>
+
+            <p class="about-text">
+
+                I am a Computer Engineering student with an interest
+                in developing websites and software applications.
+                I enjoy learning new technologies and improving my
+                programming skills.
+
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             EDUCATION
+        ========================== -->
+
+        <div class="section" id="education">
+
+            <h2>Education</h2>
+
+            <div class="education">
+
+
+                <!-- B.E. -->
+
+                <div class="education-box">
+
+                    <h3>Bachelor of Engineering</h3>
+
+                    <p>
+                        Computer Engineering
+                    </p>
+
+                    <p>
+                        Marwadi University
+                    </p>
+
+                    <p class="year">
+                        2026 - Present
+                    </p>
+
+                </div>
+
+
+                <!-- DIPLOMA -->
+
+                <div class="education-box">
+
+                    <h3>Diploma</h3>
+
+                    <p>
+                        Computer Engineering
+                    </p>
+
+                    <p>
+                        Gujarat Board
+                    </p>
+
+                    <p class="year">
+                        2023 - 2025
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <div class="section" id="skills">
+
+            <h2>Skills</h2>
+
+            <div class="skills">
+
+                <div class="skill">
+                    HTML
+                </div>
+
+                <div class="skill">
+                    CSS
+                </div>
+
+                <div class="skill">
+                    JavaScript
+                </div>
+
+                <div class="skill">
+                    Java
+                </div>
+
+                <div class="skill">
+                    MySQL
+                </div>
+
+                <div class="skill">
+                    C Programming
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <div class="section" id="projects">
+
+            <h2>Projects</h2>
+
+            <div class="projects">
+
+
+                <div class="project">
+
+                    <h3>Inventory Management System</h3>
+
+                    <p>
+                        A system for managing products, stock,
+                        users and inventory records.
+                    </p>
+
+                </div>
+
+
+                <div class="project">
+
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A responsive portfolio website created
+                        using HTML and CSS.
+                    </p>
+
+                </div>
+
+
+                <div class="project">
+
+                    <h3>Student Management System</h3>
+
+                    <p>
+                        A simple application for managing
+                        student information and records.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <div class="section contact" id="contact">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                <strong>Email:</strong>
+                daksh@example.com
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                +91 98765 43210
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Gujarat, India
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Daksh Bhimani | Personal Portfolio
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
